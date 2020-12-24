@@ -1,0 +1,82 @@
+{% extends 'transationtemplate.html' %}
+{% block index_contrl %}
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">编译</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">^<small class="text-muted">...</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>本模块主要进行应用程序的编译工作,提供直接编译通道</li>
+        </ul>
+        <button type="button" onclick="purchasedetail();" class="btn btn-lg btn-block btn-outline-primary">进入</button>
+      </div>
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">LOG 查询</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">^ <small class="text-muted">...</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        <li>本模块负责对编译结果进行查询,提供直接查询通道</li>
+
+        </ul>
+        <button type="button" onclick="purchasedetail();" class="btn btn-lg btn-block btn-primary">查询</button>
+      </div>
+    </div>
+
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">启动仿真平台</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">^ <small class="text-muted">...</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        <li>本模块负责对测试平台进行启动,提供直接的启动通道</li>
+
+        </ul>
+        <button type="button" onclick="purchasedetail();" class="btn btn-lg btn-block btn-primary">查询</button>
+      </div>
+    </div>
+
+
+
+  </div>
+
+{% endblock %}
+
+
+{% block index_content %}
+
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+<!---------------------- JS Func ------------------->
+function load_data(){
+	var username = localStorage.getItem("user");
+	if(username==null || username==""){
+	}else{
+		$("#AdminName").text(username);
+	}
+}
+function purchasedetail(){
+	var username = $("#AdminName").text();
+	url = "purchasedetail?" + "username=" + username; 
+ //	window.location.href= url;	
+	alert("待完善中......");
+}
+
+</script>
+
+
+{% endblock %}
+

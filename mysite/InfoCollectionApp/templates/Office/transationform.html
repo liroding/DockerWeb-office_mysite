@@ -1,0 +1,106 @@
+{% extends 'transationtemplate.html' %}
+
+{% block index_head %}
+       <h5 class="my-0 mr-md-auto font-weight-normal">事务表单处理</h5>
+       <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-7 text-dark" href="../main/informationservice"><strong id="backmainpage">回首页</strong></a>
+       	  <a class="p-2 text-dark" ><strong >用户名：</strong></a>
+       	  <a class="p-2 text-dark" ><strong id="AdminName">Username</strong></a>
+       </nav>
+{% endblock %}
+
+
+{% block index_contrl %}
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">采购表单</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">^<small class="text-muted">...</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>本模块主要进入采购表单，进行表单提交申请</li>
+        </ul>
+        <button type="button" onclick="window.location.href='purchaseorder';" class="btn btn-lg btn-block btn-outline-primary">进入</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">采购表单记录查询</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">^ <small class="text-muted">...</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        <li>本模块负责进行历史表单查询</li>
+
+
+
+        </ul>
+        <button type="button" onclick="purchasedetail();" class="btn btn-lg btn-block btn-primary">查询</button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block index_content %}
+
+
+  <div class="table" id = "purchasedetailtable" style ="width:100%;height:1000px;overflow-y :scroll;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id = "content_table">
+
+        <tr>
+		<th width="13"><input type="checkbox" class="checkbox" /></th> 
+		<th>货号</th> 
+		<th>品名</th> 
+		<th>包装/规格</th> 
+		<th>单位</th> 
+		<th>采购数量</th> 
+		<th width="110" class="ac">用户</th> 
+		<th width="110" class="ac">时间</th> 
+         </tr>
+
+	{% for purchasedetail in purchasedetails %} 
+
+		<tr>
+                     <td><input type="checkbox" class="checkbox" /></td>
+		     <td><h6><a>{{purchasedetail.c2}}</a></h6></td>
+		     <td><h6><a>{{purchasedetail.c3}}</a></h6></td>
+		     <td><h6><a>{{purchasedetail.c4}}</a></h6></td>
+		     <td><h6><a>{{purchasedetail.c5}}</a></h6></td>
+		     <td><h6><a>{{purchasedetail.c6}}</a></h6></td>
+		     <td><h6><a>{{purchasedetail.username}}</a></h6></td>
+		     <td>{{purchasedetail.date}}</td>
+		</tr>
+						
+
+	 {% endfor %}	
+</table>
+</div>
+{% endblock %}
+
+{% block script %}
+
+<script>
+<!---------------------- JS Func ------------------->
+function load_data(){
+	var username = localStorage.getItem("user");
+	if(username==null || username==""){
+	}else{
+		$("#AdminName").text(username);
+	}
+}
+function purchasedetail(){
+	var username = $("#AdminName").text();
+	url = "purchasedetail?" + "username=" + username; 
+ 	window.location.href= url;	
+}
+
+</script>
+
+
+{% endblock %}
+
