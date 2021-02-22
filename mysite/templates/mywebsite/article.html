@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>原生态实验室</title>
+	<link rel="stylesheet" href="/static/bootstrap/css/style.css" type="text/css" media="all" />
+	<link href="/static/bootstrap/css/jquery-ui.css" rel="stylesheet">
+	<link href="/static/bootstrap/css/jquery-ui.min.css" rel="stylesheet">
+</head>
+
+<style>
+
+.div-not-click{
+	pointer-events: none;
+}
+
+</style>
+
+
+<body onload="load_data()">
+<!-- Header -->
+<div id="header">
+	<div class="shell">
+		<!-- Logo + Top Nav -->
+		<div id="top">
+			<h1><a href="#">每天一小步</a></h1>
+			<div id="top-navigation">
+				Welcome <a href="#"><strong id = "AdminName">Administrator</strong></a>
+				<span>|</span>
+				<a href="#">Help</a>
+				<span>|</span>
+				<a href="../main/setting">Profile Settings</a>
+				<span>|</span>
+				<a href="../login/signin">Log out</a>
+			</div>
+		</div>
+		<!-- End Logo + Top Nav -->
+		
+		<!-- Main Nav -->
+		<div id="navigation">
+			<ul>
+			    <li><a href="index" ><span>Introduce</span></a></li>
+			    <li><a href="article?type=previous&num=0" class="active"><span>New Articles</span></a></li>
+			    <li><a href="informationservice"><span>Information Service</span></a></li>
+			    <li><a href="#"><span>Photo Gallery</span></a></li>
+        		    <li><a href="download"><span>Download</span></a></li>
+
+			</ul>
+	</div>
+		<!-- End Main Nav -->
+	</div>
+</div>
+<!-- End Header -->
+
+<!-- Container -->
+<div id="container">
+	<div class="shell">
+		
+		<!-- Small Nav -->
+		<div class="small-nav">
+			<a href="#">New Articles</a>
+			<span>&gt;</span>
+			Current Articles
+		</div>
+		<!-- End Small Nav -->
+		
+
+		<br />
+		<!-- Main -->
+		<div id="main">
+			<div class="cl">&nbsp;</div>
+			
+			<!-- Content -->
+			<div id="content">
+				
+				<!-- Box -->
+				<div class="box">
+					<!-- Box Head -->
+					<div class="box-head">
+						<h2 class="left">Current Articles</h2>
+						<div class="right">
+							<label>search articles</label>
+							<input type="text" class="field small-field" />
+							<input type="submit" class="button" value="search" />
+						</div>
+					</div>
+					<!-- End Box Head -->	
+
+					<!-- Table -->
+					<div class="table" id = "articletable" >
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" id = "content_table">
+
+        					   <tr>
+							<th width="13"><input type="checkbox" class="checkbox" /></th> 
+						        <th>Title</th> 
+							<th>Date</th> 
+							<th>Added by</th> 
+							<th width="110" class="ac">Content Control</th> 
+						   </tr>
+
+
+
+						{% for article in articles %} 
+
+
+						<tr>
+                                            	<td><input type="checkbox" class="checkbox" /></td>
+					     	<td><h3><a href="displayarticles?id={{article.id}}">{{article.title}}</a></h3></td>
+						<td>{{article.date}}</td>
+						<td><a href= "#">{{article.author}}</a></td>
+						<td><a href= "deletearticle?id={{article.id}}" class= "ico del" >Delete</a><a href= "displayarticles?id={{article.id}}" class= "ico edit">Edit</a></td>
+						</tr>
+						
+
+						{% endfor %}	
+						</table>
+						
+						
+						<!-- Pagging -->
+						<div class="pagging">
+							<div class="left">Showing 1-{{totlenumlist|length}} of {{totlenumlist |length}}</div>
+							<div class="right">
+								<a href="article?type=previous&num=0">Previous</a>
+
+								{% for i in totlenumlist %}
+									{% with i=forloop.counter %}
+									{% if i|divisibleby:5%}
+										{% with j=i %}
+											{% if j == 50 %} <!-- greater than 30 number article,add ... flag --> 
+												<span>...</span>
+											{% endif %}
+											<a href="article?type=next&num={{j}}">{%widthratio j 5 1%}</a>
+											
+										{% endwith %}
+									{% endif %}
+									{% endwith %}
+								{% endfor %}
+
+								<a href="#next"  id='articleview_next'>Next</a>
+								<a href="#">View all</a>
+							</div>
+						</div>
+						<!-- End Pagging -->
+						
+					</div>
+					<!-- Table -->
+					
+				</div>
+				<!-- End Box -->
+				
+				<!-- Box -->
+				<div class="box">
+					<!-- Box Head -->
+					<div class="box-head">
+						<h2>Add New Article</h2>
+					</div>
+					<!-- End Box Head -->
+					
+					<form action="addnewarticles" method="post" id="newarticlesfrom">
+						
+						<!-- Form -->
+						<div class="form">
+								<p>
+									<span class="req">max 100 symbols</span>
+									<label>Article Title <span>(Required Field)</span></label>
+									<input name="title" type="text" class="field size1" />
+								</p>	
+								
+								<p>
+									<label>Author </label>
+									<input id = "AuthorName" readonly="readonly" name="AuthorName" type="text" class="field size1" value= "Guest" />
+								</p>	
+								<p class="inline-field">
+									<label>Date</label>
+									<input id = "ArticleDate" readonly="readonly" name="ArticleDate" class="field size1" value= "2020.1.1" />
+								</p>
+								
+								<p>
+									<span class="req">max 10000 symbols</span>
+									<label>Content <span>(Required Field)</span></label>
+									<textarea name= "content" class="field size1" rows="10" cols="30"></textarea>
+								</p>	
+							
+						</div>
+						<!-- End Form -->
+						
+						<!-- Form Buttons -->
+						<div class="buttons">
+							<input type="button" class="button" value="preview" />
+							<input type="submit" class="button" value="submit" />
+						</div>
+						<!-- End Form Buttons -->
+					</form>
+				</div>
+				<!-- End Box -->
+
+			</div>
+			<!-- End Content -->
+			
+			<!-- Sidebar -->
+			<div id="sidebar">
+				
+				<!-- Box -->
+				<div class="box">
+					
+					<!-- Box Head -->
+					<div class="box-head">
+						<h2>Management</h2>
+					</div>
+					<!-- End Box Head-->
+					
+					<div class="box-content">
+						<a href="#" class="add-button"><span>Add new Article</span></a>
+						<div class="cl">&nbsp;</div>
+						
+						<p class="select-all"><input type="checkbox" class="checkbox" /><label>select all</label></p>
+						<p><a href="#">Delete Selected</a></p>
+						
+						<!-- Sort -->
+						<div class="sort">
+							<label>Sort by</label>
+							<select class="field">
+								<option value="">Title</option>
+							</select>
+							<select class="field">
+								<option value="">Date</option>
+							</select>
+							<select class="field">
+								<option value="">Author</option>
+							</select>
+						</div>
+						<!-- End Sort -->
+						
+					</div>
+				</div>
+				<!-- End Box -->
+			</div>
+			<!-- End Sidebar -->
+			
+			<div class="cl">&nbsp;</div>			
+		</div>
+		<!-- Main -->
+	</div>
+</div>
+<!-- End Container -->
+
+
+
+<!-- Footer -->
+<div id="footer">
+	<div class="shell">
+		<span class="left">&copy; 2010 - CompanyName</span>
+		<span class="right">
+			Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a>
+		</span>
+	</div>
+</div>
+<!-- End Footer -->
+
+
+
+
+
+<!---------------------- JS Func ------------------->
+
+<script src="/static/bootstrap/js/jquery.js"></script>
+<script src="/static/bootstrap/js/jquery-ui.js"></script>
+<script src="/static/bootstrap/js/jquery-ui.min.js"></script>
+<script src="/static/bootstrap/js/edit.js"></script>
+
+
+<script>
+
+
+
+var serverip = '10.32.64.101'; //ipaddress
+var serverport = '8080'; //port
+
+/*
+    function creatTab(jsonformatdata,row){   
+        var tab="<tr><th width=\"13\"><input type=\"checkbox\" class=\"checkbox\" /></th> <th>Title</th>  <th>Date</th> <th>Added by</th> <th width=\"110\" class=\"ac\">Content Control</th> </tr>"
+		
+        for(var i=0;i<row;i++){
+            tab+='<tr class="odd">'   
+            for(var j=0;j<1;j++){
+                tab += "<td>" + "<input type=\"checkbox\" class= \"checkbox\" />" + "</td>"
+				tab += "<td>" + "<h3><a href= \"#\" > "+ jsonformatdata[i]['title'] + ".</a></h3>" +"</td>"
+				tab += "<td>" + jsonformatdata[i]['date'] + "</td>"
+				tab += "<td>" + "<a href= \"#\"> " + jsonformatdata[i]['author'] + "</a>" + "</td>"
+				tab += "<td>" + "<a href= \"#\" class= \"ico del \" >Delete</a><a href= \"# \" class= \"ico edit\">Edit</a>" + "</td>"
+
+            }
+             tab+='</tr>'
+        }    
+        content_table.innerHTML=tab
+		
+    }
+*/
+
+$("#articleview_next").click(function(){
+    
+        console.log('view next article ');
+	suburl = "/main/displayarticles"
+        gurl = "http://" + serverip + ":" + serverport + suburl;
+
+        //send post request
+        $.post(gurl,
+    	{
+            type:"next",
+	    num:3
+    	},
+    	function(data,status){
+        	console.log("server rt date: \n" + data + "\nstatus: " + status);
+		    
+	        var jsonstr = data;
+		console.log("json str : " + jsonstr);
+		jsonformatdata = JSON.parse(jsonstr);
+
+                console.log(jsonformatdata[0]['title']);
+			
+//		creatTab(jsonformatdata,Object.keys(jsonformatdata).length);
+		//	$("#checkcfgarg_showInfo").text("");
+		//	$("#checkcfgarg_showInfo").html(varnewtab);
+		
+    });
+	
+});	
+
+
+
+function load_data(){
+        var username = localStorage.getItem("user");
+        if(username==null || username==""){
+        }else{
+                $("#AdminName").text(username);
+                $("#AuthorName").val(username);
+        }
+	//set article table div-not-click ,when username = 'dingyinglai'
+	if(username != "dingyinglai")
+		$("#articletable").addClass('div-not-click');	
+	//get time
+	var myDate = new Date();
+	var year = myDate.getFullYear();
+	var month = myDate.getMonth() + 1;
+	var date = myDate.getDate();
+        var now = year + '-' + month + '-' + date;
+        $("#ArticleDate").val(now);
+}
+
+
+
+	
+
+</script>
+
+
+	
+</body>
+
+
+
+
+
+
+
+</html>

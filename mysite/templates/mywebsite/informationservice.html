@@ -1,0 +1,161 @@
+{% extends 'template.html' %}
+
+
+
+{% block index_navigation %}
+        <li><a href="index" ><span>Introduce</span></a></li>
+        <li><a href="article?type=previous&num=0"><span>New Articles</span></a></li>
+        <li><a href="informationservice" class="active" ><span>Information Service</span></a></li>
+        <li><a href="#"><span>Photo Gallery</span></a></li>
+        <li><a href="download"><span>Download</span></a></li>
+
+{% endblock %}
+
+
+
+
+{% block index_small-nav %}
+	<a href="ds">InformationService</a>
+	<span>&gt;</span>
+	information service
+{% endblock %}
+
+{% block index_box-head %}
+	<h2>Service Item</h2>
+{% endblock %}
+
+{% block index_box-content %}
+
+<style>
+
+
+.page{
+    width:350px;
+    height:350px;
+    position:relative;
+    bottom:0px;
+    left:200px;
+}
+.list{
+    float:left;
+    display:inline-block;
+    height:33.3%;
+    width:33.3%;
+    position:relative;
+}
+ .list:before{
+    content:'';
+    position:absolute;
+    left:10px;
+    right:10px;
+    top:10px;
+    bottom:10px;
+    border-radius:20px;
+    background-color:rgba(220,38,38,0.2);
+}
+ .list:after{
+    content:attr(data-index);
+    position:absolute;
+    height:30px;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    text-align:center;
+    font:24px/30px bold 'microsoft yahei';
+}
+
+
+.justify{
+	justify-content:center;
+}
+.align{
+	align-items:center;
+}
+
+.wid{
+	width:400px;
+	height:80px;
+	border:1px solid red;
+	margin:10px 20px 0px;
+	background-color:#BEBFC3;
+}
+.subvideo{
+
+	margin:0px 18px 5px;
+}
+.subtext{
+	color:green;
+	margin:8px 1px 2px;
+}
+
+
+
+.draggable { position:relative; left:100px; bottom:300px; width: 90px; height: 80px; padding: 5px; float: left; margin: 0 10px 10px 0; font-size: .9em; }
+.ui-widget-header {
+ position:relative;
+ left:5px; 
+ bottom:700px;
+ height:30px ;
+ margin: 0; 
+
+} 
+.ui-widget-content{
+ position:relative;
+ left:100px; 
+ bottom:300px;
+ height:30px ;
+ margin: 0; 
+}
+.image{
+position:absolute;
+left:18px;
+top:18px;
+height:80px;
+width:80px;
+}
+
+
+
+.subtext{
+	position:absolute;
+	left:15px;
+	top:100px;
+	color:red;
+	margin:8px 1px 2px;
+}
+
+</style>
+<div class="page align">
+	<div class="list" onClick="window.location.href='../datacollection/inputinformation'" >
+	<img class="image" src="/static/pic/perinfo.jpg" height=50 width=50 >
+	<p class="subtext">Personal Detail</p>
+	</div>
+
+	<div class="list" onClick="window.location.href='../datacollection/office'">
+	<img class="image" src="/static/pic/office.jpg" >
+	<p class="subtext">Office Related</p>
+	</div>
+	<div class="list" onClick="window.location.href='../datacollection/origlab'">
+	<img class="image" src="/static/pic/lab.jpg" >
+	<p class="subtext"> Original Lab</p>
+	</div>
+	<div class="list" onClick="window.location.href='../datacollection/customcollection'">
+	<img class="image" src="/static/pic/factory.jpg" >
+	<p class="subtext"> Custom Lab</p>
+	</div>
+	<div class="list" data-index="e">
+	</div>
+	<div class="list" data-index="t">
+	</div>
+	<div class="list" data-index="t">
+	</div>
+	<div class="list" data-index="e">
+	</div>
+	<div class="list" data-index="r">
+	</div>
+</div>
+
+
+{% endblock %}

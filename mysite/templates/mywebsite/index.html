@@ -1,0 +1,28 @@
+{% extends 'template.html' %}
+
+
+
+{% block index_navigation %}
+        <li><a href="index" class="active" ><span>Introduce</span></a></li>
+        <li><a href="article?type=previous&num=0"><span>New Articles</span></a></li>
+        <li><a href="informationservice" ><span>Information Service</span></a></li>
+        <li><a href="#"><span>Photo Gallery</span></a></li>
+        <li><a href="download"><span>Download</span></a></li>
+
+{% endblock %}
+
+
+
+
+{% block index_small-nav %}
+	<a href="ds">Introduce</a>
+	<span>&gt;</span>
+	...
+{% endblock %}
+
+{% block index_box-head %}
+	<h2>Introduce</h2>
+{% endblock %}
+
+{% block index_box-content %}
+{% endblock %}

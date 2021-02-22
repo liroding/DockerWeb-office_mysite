@@ -1,0 +1,170 @@
+{% extends 'template.html' %}
+{% block index_navigation %}
+        <li><a href="index" ><span>Introduce</span></a></li>
+        <li><a href="article?type=previous&num=0"><span>New Articles</span></a></li>
+        <li><a href="informationservice" ><span>Information Service</span></a></li>
+        <li><a href="#"><span>Photo Gallery</span></a></li>
+        <li><a href="download" class="active"><span>Download</span></a></li>
+
+{% endblock %}
+
+
+
+{% block index_small-nav %}
+	<a href="ds">Download</a>
+	<span>&gt;</span>
+	download file
+{% endblock %}
+
+{% block index_box-head %}
+	<h2> Download File</h2>
+{% endblock %}
+
+{% block index_box-content %}
+<div class="form" id = "downloadpage">
+	
+	<br>
+	<br>
+	<p>
+		<span class="req"> -------> </span>
+                <label>Personal Detail Excel<span>  (File Format)</span></label>
+		<!-- 
+                <a href="../static/downloadfile/personalinfodb.xls?ranparam=random()" onclick="return ReqPersonalConvertExcel();">click it,download file</a>
+		-->
+                <a id="_personalconvert" href="../static/downloadfile/personalinfodb.xls?ranparam=xxx" onclick="return ReqPersonalConvertExcel();">click it,download file</a>
+   	
+	</p>
+
+
+	<br>
+	<br>
+	<p>
+		<span class="req"> -------> </span>
+                <label>Office Detail Excel<span>  (File Format)</span></label>
+                <a id="_officeconvert" href="../static/downloadfile/officeinfodb.xls?ranparam=xxx" onclick="return ReqOfficeConvertExcel();">click it,download file</a>
+   	</p>
+
+
+
+   	<br>
+   	<br>
+   	<p>
+        	<span class="req"> -------> </span>
+                <label>Article Excel <span>  (About Article Record File)</span></label>
+                <a id="_articleconvert" href="../static/downloadfile/articlecontentdb.xls?ranparam=xxx)" onclick="return ReqArticleConvertExcel();">click it,input your need</a>
+   	</p>
+
+        <br>
+        <br>
+        <br>
+</div>
+{% endblock %}
+
+
+{% block script %}
+$("#btmodify").click(function()
+{
+	alert('nihao')
+	$("#arttextarea").removeAttr('readonly')
+})
+
+
+
+function ReqArticleConvertExcel(){
+	
+        suburl = "/main/articlecontentexcel";
+        gurl = "http://" + serverip + ":" + serverport + suburl;
+
+        //send post request
+        $.post(gurl,
+        {
+        },
+        function(data,status){
+                console.log("server rt date: \n" + data + "\nstatus: " + status);
+        	if (status == "success"){
+			alert('success')
+			return true;
+		}else{
+			return false;
+		}
+	});
+	var nowdate = new Date();
+	var selectTime = nowdate.getTime();
+	$("#_articleconvert").attr('href','../static/downloadfile/articlecontentdb.xls?param=' + selectTime);
+
+
+}
+function ReqPersonalConvertExcel(){
+
+        suburl = "/datacollection/infoexcel";
+        gurl = "http://" + serverip + ":" + serverport + suburl;
+
+        //send post request
+        $.post(gurl,
+        {
+        },
+        function(data,status){
+                console.log("server rt date: \n" + data + "\nstatus: " + status);
+        	if (status == "success"){
+			alert('success')
+			return true;
+		}else{
+			return false;
+		}
+	});
+	var nowdate = new Date();
+	var selectTime = nowdate.getTime();
+	$("#_personalconvert").attr('href','../static/downloadfile/personalinfodb.xls?ranparam=' + selectTime);
+}
+
+
+
+function ReqOfficeConvertExcel(){
+
+        suburl = "/datacollection/officeexcel";
+        gurl = "http://" + serverip + ":" + serverport + suburl;
+
+        //send post request
+        $.post(gurl,
+        {
+        },
+        function(data,status){
+                console.log("server rt date: \n" + data + "\nstatus: " + status);
+        	if (status == "success"){
+			alert('success')
+			return true;
+		}else{
+			return false;
+		}
+	});
+
+
+	var nowdate = new Date();
+	var selectTime = nowdate.getTime();
+	$("#_officeconvert").attr('href','../static/downloadfile/officeinfodb.xls?ranparam=' + selectTime);
+
+
+	
+}
+
+
+
+
+function load_data(){
+        var username = localStorage.getItem("user");
+        if(username==null || username==""){
+        }else{
+                $("#AdminName").text(username);
+                $("#AuthorName").val(username);
+        }
+        //set article table div-not-click ,when username = 'dingyinglai'
+        if((username != "dingyinglai") && (username != "luccat"))
+                $("#downloadpage").addClass('div-not-click');
+}
+
+
+
+
+
+
+{% endblock %}

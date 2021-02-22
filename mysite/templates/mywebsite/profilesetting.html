@@ -1,0 +1,153 @@
+{% extends 'transationtemplate.html' %}
+
+
+{% block index_head %}
+       <h5 class="my-0 mr-md-auto font-weight-normal">自定义设置</h5>
+       <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-7 text-dark" href="../main/index"><strong id="backmainpage">回上一页</strong></a>
+       	  <a class="p-2 text-dark" ><strong >用户名：</strong></a>
+       	  <a class="p-2 text-dark" ><strong id="AdminName">Username</strong></a>
+       </nav>
+{% endblock %}
+
+
+
+{% block index_contrl %}
+
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">设置</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+          <div class="container">
+            <h2>邮件通知
+               <button id="_btisopenmail" type="button" class="btn btn-primary">开</button>
+            </h2>
+          </div>
+
+        </ul>
+      </div>
+    </div>
+
+</div>
+
+
+<!--
+<div class="container">
+  <h2>按钮样式</h2>
+  <button type="button" class="btn">基本按钮</button>
+  <button type="button" class="btn btn-primary">主要按钮</button>
+  <button type="button" class="btn btn-secondary">次要按钮</button>
+  <button type="button" class="btn btn-success">成功</button>
+  <button type="button" class="btn btn-info">信息</button>
+  <button type="button" class="btn btn-warning">警告</button>
+  <button type="button" class="btn btn-danger">危险</button>
+  <button type="button" class="btn btn-dark">黑色</button>
+  <button type="button" class="btn btn-light">浅色</button>
+  <button type="button" class="btn btn-link">链接</button>      
+</div>
+-->
+
+
+{% endblock %}
+
+
+{% block index_content %}
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+<!---------------------- JS Func ------------------->
+
+
+var serverip = '10.32.64.101'; //ipaddress
+var serverport = '8080'; //port
+var username = "";
+
+function load_data(){
+	username = localStorage.getItem("user");
+	if(username==null || username==""){
+	}else{
+		$("#AdminName").text(username);
+	}
+
+        //get the profile setting
+//	url = "currentsetting?" + "username=" + username; 
+// 	window.location.href= url;
+		
+	suburl = "/main/currentsetting?" + "username=" + username ;
+        gurl = "http://" + serverip + ":" + serverport + suburl;
+
+        //send post request
+        $.post(gurl,
+    	{
+            type:"currentsetting",
+    	},
+    	function(profilesetting,status){
+        	console.log("server rt date: \n" + profilesetting + "\nstatus: " + status);
+		_isopenmail = profilesetting.charAt(0);
+	        //check profilesetting
+  		if (_isopenmail == '1')
+                {
+			$("#_btisopenmail").text("开");
+		}else if(_isopenmail == '0'){
+			$("#_btisopenmail").text("关");
+		}
+    });
+
+}
+$("#_btisopenmail").click(function(){
+
+ status = $("#_btisopenmail").text();
+ value = "";
+ if(status == "开"){
+   value = "0" ;
+   $("#_btisopenmail").text("关");
+ }
+ else if(status == "关"){
+   value = "1";
+   $("#_btisopenmail").text("开");
+ }
+
+ suburl = "/main/updateprofilesetting?" + "username=" + username;
+ gurl = "http://" + serverip + ":" + serverport + suburl;
+
+ //send post request,update profilesetting about isopenclosemail
+ $.post(gurl,
+ {
+      type:"isopenmail",
+      value: value,
+ },
+      function(data,status){
+          console.log("server rt date: \n" + data + "\nstatus: " + status);
+ });
+
+
+});
+</script>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

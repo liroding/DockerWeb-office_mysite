@@ -1,0 +1,72 @@
+{% extends 'template.html' %}
+{%block  index_navigation %}
+        <li><a href="index" ><span>Introduce</span></a></li>
+        <li><a href="article?type=previous&num=0" class="active"><span>New Articles</span></a></li>
+        <li><a href="informationservice" ><span>Information Service</span></a></li>
+        <li><a href="#"><span>Photo Gallery</span></a></li>
+        <li><a href="download"><span>Download</span></a></li>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block index_small-nav %}
+	<a href="ds">New Article</a>
+	<span>&gt;</span>
+	show article
+{% endblock %}
+
+{% block index_box-head %}
+	<h2> Show Article</h2>
+{% endblock %}
+
+{% block index_box-content %}
+<form action="updatearticle" method="post">
+	<div class="form">
+		<p>
+			<span class='req'></span>
+			<label>Article Title </label>
+			<input type="text" readonly="readonly" class="field size1" value="{{article.title}}">
+		</p>
+
+
+
+		<p>
+			<span class='req'></span>
+			<label>Author </label>
+			<input type="text" readonly="readonly" class="field size2" value="{{article.author}}">
+		</p>
+
+
+		<p>
+			<span class='req'></span>
+			<label>Content </label>
+			<textarea name= "newcontent" class="field size1" rows="10" cols="30" readonly="readonly" id="arttextarea" style="overflow-y:auto"> {{article.content}}</textarea>
+		</p>
+
+		<div class="buttons">
+			<input type="button" class="button" id="btmodify" value="modify" />
+			<button type="submit" name="articleid" value={{article.id}} class="button">update</button>
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+
+{% block script %}
+$("#btmodify").click(function()
+{
+	alert('Modify This Article')
+	$("#arttextarea").removeAttr('readonly')
+})
+{% endblock %}
