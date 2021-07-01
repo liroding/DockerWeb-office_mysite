@@ -15,7 +15,7 @@ class OfficeInfoDB(models.Model):
         c3 = models.CharField(max_length = 50,default = '')
         c4 = models.CharField(max_length = 50,default = '')
         c5 = models.CharField(max_length = 20,default = '')
-        c6 = models.CharField(max_length = 8,default = '')
+        c6 = models.CharField(max_length = 50,default = '')
 class CustomInfoDB(models.Model):
         username = models.CharField(max_length = 20,default = '')
         title = models.CharField(max_length = 50,default = '')

@@ -17,6 +17,52 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <o:LastSaved>2020-09-27T11:15:41Z</o:LastSaved>
 </o:DocumentProperties>
 </xml><![endif]-->
+
+
+<!--********************************************************************-->
+<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min_v3.3.7.css">
+<style>
+
+/* Custom Styles */
+    ul.nav-tabs{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+    ul.nav-tabs.affix{
+        top:  50px; /* Set the top position of pinned element */
+        left: 85%; /* Set the top position of pinned element */
+    }
+</style>
+
+<!--********************************************************************-->
+
+
 <style>
 <!--table
  {mso-displayed-decimal-separator:"\.";
@@ -1129,35 +1175,11 @@ td
  }
 -->
 </style>
-<!--[if gte mso 9]><xml>
- <x:ExcelWorkbook>
-  <x:ExcelWorksheets>
-   <x:ExcelWorksheet>
-    <x:Name>Sheet1</x:Name>
-<x:WorksheetOptions>
- <x:StandardWidth>2304</x:StandardWidth>
- <x:Print>
-  <x:ValidPrinterInfo/>
-  <x:PaperSizeIndex>9</x:PaperSizeIndex>
-  <x:HorizontalResolution>600</x:HorizontalResolution>
-  <x:VerticalResolution>600</x:VerticalResolution>
- </x:Print>
- <x:Zoom>115</x:Zoom>
- <x:Selected/>
-</x:WorksheetOptions>
-   </x:ExcelWorksheet>
-  </x:ExcelWorksheets>
-  <x:WindowHeight>9432</x:WindowHeight>
-  <x:WindowWidth>16608</x:WindowWidth>
-  <x:WindowTopX>0</x:WindowTopX>
-  <x:WindowTopY>0</x:WindowTopY>
-  <x:RefModeR1C1/>
-  <x:TabRatio>600</x:TabRatio>
-  <x:ActiveSheet>0</x:ActiveSheet>
- </x:ExcelWorkbook>
-</xml><![endif]-->
 </head>
-<body link='blue' vlink='purple' class='x25'>
+
+<body data-spy="scroll" data-target="#myScrollspy" link='blue' vlink='purple' class='x25'>
+
+<div class="container"  >
 
 <table id='cfgtable' border='0' cellpadding='0' cellspacing='0' width='1165' style='border-collapse: 
  collapse;table-layout:fixed;width:873pt'>
@@ -1322,11 +1344,14 @@ td
  <tr height='112' class='x26' style='mso-height-source:userset;height:84pt' id='r13'>
 <td height='110' class='x27' style='height:82.5pt;'>12</td>
 <td height='110' class='x56' width='142' style='height:82.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:65;margin-left:9px;margin-top:6px;width:118px;height:96px'><img width='118' height=96' src="/static/office/office_files/image002.png" name='Picture 770'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='110' class='x55' width='142' style='height:82.5pt;width:106.5pt;'></td></tr></table></span></td>
-<td class='x33'>ASG97154</td>
-<td class='x33'>晨光15g超强固体胶</td>
-<td class='x32'>按盒出，12个/盒</td>
+<td class='x30'>ASG97154</td>
+<td class='x31'>晨光15g超强固体胶</td>
+<td class='x30'>按盒出，12个/盒</td>
 <td class='x47'>个</td>
-<td colspan='4' class='x43'></td>
+<td class='x49'><input size='6' id='r12_input' type="text"/></td>
+<td class='x25'></td>
+<td class='x25'></td>
+<td class='x25'></td>
  </tr>
  <tr height='103' style='mso-height-source:userset;height:77.25pt' id='r14'>
 <td height='101' class='x27' style='height:75.75pt;'>13</td>
@@ -1503,7 +1528,7 @@ td
 <td class='x40'>晨光六联文件框(灰色) 345mmX255mmX290mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r28_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1515,7 +1540,7 @@ td
 <td class='x40'>晨光二层文件盘(灰色) 265mmX340mmX150mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r29_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1527,7 +1552,7 @@ td
 <td class='x40'>晨光三层文件盘(灰色) 258mmX335mmX245mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r30_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1539,7 +1564,7 @@ td
 <td class='x35' style='overflow:hidden;'>晨光35mm二寸档案盒经济型(蓝色）320mmX240mmX35mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r31_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1551,7 +1576,7 @@ td
 <td class='x35' style='overflow:hidden;'>晨光55mm三寸档案盒经济型(蓝色）315mmX235mmX55mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r32_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1563,7 +1588,7 @@ td
 <td class='x40'>晨光A4牛皮纸档案盒(4CM)310mmX220mmX40mm</td>
 <td class='x40'>按包出，10个/包</td>
 <td class='x46'>包</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r33_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1575,7 +1600,7 @@ td
 <td class='x40'>晨光80页资料册（蓝色，黑色) 315mmX235mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r34_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1587,7 +1612,7 @@ td
 <td class='x40' style='overflow:hidden;'>晨光100页资料册+外套（蓝色） 315mmX235mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r35_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1599,7 +1624,7 @@ td
 <td class='x40'>晨光60页资料册（蓝色，黑色) 315mmX235mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r36_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1611,7 +1636,7 @@ td
 <td class='x40' style='overflow:hidden;'>晨光40页资料册(红绿蓝黑四色）315mmX235mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r37_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1623,7 +1648,7 @@ td
 <td height='125' class='x58' width='315' style='height:93.75pt;width:236.25pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:31;margin-left:5px;margin-top:12px;width:230px;height:26px'><img width='230' height=26' src="/static/office/office_files/image040.png" name='Picture 1382'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='125' class='x57' width='315' style='height:93.75pt;width:236.25pt;'>晨光长押文件夹（蓝色，黑色）</td></tr></table></span></td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r38_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1635,7 +1660,7 @@ td
 <td class='x40' style='overflow:hidden;'>晨光长押夹+板夹蓝（蓝色，黑色）<span style='mso-spacerun:yes;white-space:nowrap;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r39_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1647,7 +1672,7 @@ td
 <td class='x35'>晨光强力夹（蓝色，黑色）310X235mmX25mm</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r40_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1659,7 +1684,7 @@ td
 <td height='103' class='x60' width='315' style='height:77.25pt;width:236.25pt;overflow:hidden;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:32;margin-left:5px;margin-top:12px;width:234px;height:27px'><img width='234' height=27' src="/static/office/office_files/image041.png" name='Picture 1384'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='103' class='x59' width='315' style='height:77.25pt;width:236.25pt;overflow:hidden;'>晨光双强力夹（蓝色，黑色）310X235mmX25mm</td></tr></table></span></td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r41_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1671,7 +1696,7 @@ td
 <td class='x40'>晨光单长押夹+斜内袋PP（蓝色，黑色）</td>
 <td class='x40'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r42_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1683,7 +1708,7 @@ td
 <td class='x40'>晨光7寸办公书立(蓝色，黑色）130mmX170mm</td>
 <td class='x40'>按组出，2片/组</td>
 <td class='x46'>组</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r43_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1695,7 +1720,7 @@ td
 <td class='x40'>晨光30cm直尺办公专用</td>
 <td class='x40'>按20把以上出</td>
 <td class='x46'>把</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r44_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1707,7 +1732,7 @@ td
 <td class='x40'>晨光20cm直尺办公专用</td>
 <td class='x40'>按20把以上出</td>
 <td class='x46'>把</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r45_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1719,75 +1744,80 @@ td
 <td class='x28'>晨光HB木杆铅笔六角银黑抽条AWP30801</td>
 <td class='x29'>按盒出，12支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r46_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='49' style='mso-height-source:userset;height:36.75pt' id='r47'>
 <td height='47' class='x27' style='height:35.25pt;'>46</td>
-<td rowspan='3' height='145' class='x54' width='142' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:108.75pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:38;margin-left:20px;margin-top:20px;width:97px;height:139px'><img width='97' height=139' src="/static/office/office_files/image033.png" name='Picture 18795'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td rowspan='3' height='145' class='x53' width='142' style='height:108.75pt;width:106.5pt;'></td></tr></table></span></td>
+<td height='146' class='x54' width='142' style='height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:37;margin-left:17px;margin-top:17px;width:107px;height:119px'><img width='107' height=119' src="/static/office/office_files/image033.png" name='Picture 18898'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='146' class='x53' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
+
 <td class='x28'>AWM26101A</td>
 <td class='x28'>晨光单头流通型白板笔AWM26101黑</td>
 <td class='x29'>按盒出，10支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r47_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='49' style='mso-height-source:userset;height:36.75pt' id='r48'>
 <td height='47' class='x27' style='height:35.25pt;'>47</td>
+<td height='146' class='x54' width='142' style='height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:37;margin-left:17px;margin-top:17px;width:107px;height:119px'><img width='107' height=119' src="/static/office/office_files/image033.png" name='Picture 18898'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='146' class='x53' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x28'>AWM26101C</td>
 <td class='x28'>晨光单头流通型白板笔AWM26101红</td>
 <td class='x29'>按盒出，10支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r48_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='49' style='mso-height-source:userset;height:36.75pt' id='r49'>
 <td height='47' class='x27' style='height:35.25pt;'>48</td>
+<td height='146' class='x54' width='142' style='height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:37;margin-left:17px;margin-top:17px;width:107px;height:119px'><img width='107' height=119' src="/static/office/office_files/image033.png" name='Picture 18898'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='146' class='x53' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x28'>AWM26101B</td>
 <td class='x28'>晨光单头流通型白板笔AWM26101蓝</td>
 <td class='x29'>按盒出，10支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r49_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='50' style='mso-height-source:userset;height:37.5pt' id='r50'>
 <td height='48' class='x27' style='height:36pt;'>49</td>
-<td rowspan='3' height='148' class='x54' width='142' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:111pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:39;margin-left:20px;margin-top:15px;width:107px;height:128px'><img width='107' height=128' src="/static/office/office_files/image009.png" name='Picture 18796'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td rowspan='3' height='148' class='x53' width='142' style='height:111pt;width:106.5pt;'></td></tr></table></span></td>
+<td height='146' class='x54' width='142' style='height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:37;margin-left:17px;margin-top:17px;width:107px;height:119px'><img width='107' height=119' src="/static/office/office_files/image009.png" name='Picture 18898'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='146' class='x53' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x28'>AWM26301A</td>
 <td class='x28'>晨光可加墨白板笔单头AWM26301黑</td>
 <td class='x29'>按盒出，10支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r50_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='50' style='mso-height-source:userset;height:37.5pt' id='r51'>
 <td height='48' class='x27' style='height:36pt;'>50</td>
+<td height='146' class='x54' width='142' style='height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:37;margin-left:17px;margin-top:17px;width:107px;height:119px'><img width='107' height=119' src="/static/office/office_files/image009.png" name='Picture 18898'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='146' class='x53' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x28'>AWM26301C</td>
 <td class='x28'>晨光可加墨白板笔单头AWM26301红</td>
 <td class='x29'>按盒出，10支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r51_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='50' style='mso-height-source:userset;height:37.5pt' id='r52'>
 <td height='48' class='x27' style='height:36pt;'>51</td>
+<td height='146' class='x54' width='142' style='height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:37;margin-left:17px;margin-top:17px;width:107px;height:119px'><img width='107' height=119' src="/static/office/office_files/image009.png" name='Picture 18898'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='146' class='x53' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x28'>AWM26301B</td>
 <td class='x28'>晨光可加墨白板笔单头AWM26301蓝</td>
 <td class='x29'>按盒出，10支/盒</td>
 <td class='x46'>支</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r52_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1799,7 +1829,7 @@ td
 <td class='x28'>晨光磁粒ASC99366</td>
 <td class='x29'>按个数出</td>
 <td class='x46'>板</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r53_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1811,7 +1841,7 @@ td
 <td class='x28'>晨光带磁吸白板擦ASC99364</td>
 <td class='x29'>按个数出</td>
 <td class='x46'>个</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r54_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1823,7 +1853,7 @@ td
 <td class='x40' style='overflow:hidden;'>晨光黑色长尾夹PVC筒装(48个）单只直径25mm</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r55_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1835,7 +1865,7 @@ td
 <td class='x40' style='overflow:hidden;'>晨光黑色长尾夹PVC筒装（24个）单只直径32mm</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r56_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1847,7 +1877,7 @@ td
 <td class='x40'>晨光黑色长尾夹PVC筒装(40个)单只直径19mm</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r57_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1859,7 +1889,7 @@ td
 <td class='x40' style='overflow:hidden;'>晨光黑色长尾夹PVC筒装（12个）单只直径50mm</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r58_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1871,7 +1901,7 @@ td
 <td class='x40'>晨光普透封箱胶带60mm*60y(5卷)</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r59_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1883,7 +1913,7 @@ td
 <td class='x40'>晨光普透封箱胶带60mm*150y(5卷)</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r60_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
@@ -1895,89 +1925,67 @@ td
 <td class='x40'>晨光文具胶带12mm*18y(12卷)</td>
 <td class='x40'>按筒出</td>
 <td class='x46'>筒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r61_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
  <tr height='136' style='mso-height-source:userset;height:102pt' id='r62'>
-<td height='134' class='x27' style='height:100.5pt;'></td>
+<td height='134' class='x27' style='height:100.5pt;'>61</td>
 <td height='134' class='x54' width='142' style='height:100.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:55;margin-left:28px;margin-top:18px;width:78px;height:107px'><img width='78' height=107' src="/static/office/office_files/image052.png" name='图片 34'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='134' class='x53' width='142' style='height:100.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x27'>ADMN4266 </td>
 <td class='x27'>本味文件夹</td>
 <td class='x27'>按包出，12个/包</td>
 <td class='x46'>包</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r62_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
- <tr height='133' style='mso-height-source:userset;height:99.75pt' id='r63'>
-<td height='131' class='x27' style='height:98.25pt;'></td>
-<td height='131' class='x54' width='142' style='height:98.25pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:56;margin-left:5px;margin-top:17px;width:137px;height:108px'><img width='137' height=108' src="/static/office/office_files/image053.png" name='图片 62'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='131' class='x53' width='142' style='height:98.25pt;width:106.5pt;'></td></tr></table></span></td>
-<td class='x27'></td>
-<td class='x27'>备用资料袋</td>
-<td class='x27'>按袋出，20个/袋</td>
-<td class='x46'>袋</td>
-<td class='x49'></td>
-<td class='x25'></td>
-<td class='x25'></td>
-<td class='x25'></td>
- </tr>
- <tr height='122' style='mso-height-source:userset;height:91.5pt' id='r64'>
-<td height='120' class='x27' style='height:90pt;'></td>
+
+<tr height='122' style='mso-height-source:userset;height:91.5pt' id='r63'>
+<td height='120' class='x27' style='height:90pt;'>62</td>
 <td height='120' class='x54' width='142' style='height:90pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:57;margin-left:9px;margin-top:4px;width:133px;height:108px'><img width='133' height=108' src="/static/office/office_files/image053.png" name='图片 63'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='120' class='x53' width='142' style='height:90pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x27'></td>
 <td class='x27'>备用资料袋</td>
 <td class='x27'>按袋出，100个/袋</td>
 <td class='x46'>袋</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r63_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
- <tr height='156' style='mso-height-source:userset;height:117pt' id='r65'>
-<td height='154' class='x27' style='height:115.5pt;'></td>
+ <tr height='156' style='mso-height-source:userset;height:117pt' id='r64'>
+<td height='154' class='x27' style='height:115.5pt;'>63</td>
 <td height='154' class='x54' width='142' style='height:115.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:58;margin-left:15px;margin-top:7px;width:113px;height:144px'><img width='113' height=144' src="/static/office/office_files/image058.png" name='图片 64'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='154' class='x53' width='142' style='height:115.5pt;width:106.5pt;'></td></tr></table></span></td>
 <td class='x27'>AHMV7601</td>
 <td class='x27'>荧光笔</td>
 <td class='x27'>按盒出，3支/盒</td>
 <td class='x46'>盒</td>
-<td class='x49'></td>
+<td class='x49'><input size='6' id='r64_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
- <tr height='37' style='mso-height-source:userset;height:27.75pt' id='r66'>
-<td rowspan='4' height='146' class='x42' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:109.5pt;'></td>
-<td rowspan='4' height='146' class='x63' width='142' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:109.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:64;margin-left:32px;margin-top:7px;width:82px;height:136px'><img width='82' height=136' src="/static/office/office_files/image001.png" name='Picture 1'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td rowspan='4' height='146' class='x62' width='142' style='height:109.5pt;width:106.5pt;'></td></tr></table></span></td>
-<td rowspan='4' height='146' class='x45' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:109.5pt;'>AHMV4901</td>
-<td rowspan='4' height='146' class='x45' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:109.5pt;'>荧光笔</td>
-<td rowspan='4' height='146' class='x45' style='border-right:1px solid windowtext;border-bottom:1px solid windowtext;height:109.5pt;'>按盒出，6支/盒</td>
-<td rowspan='4' height='146' class='x48' style='border-bottom:1px solid windowtext;height:109.5pt;'>盒</td>
-<td class='x49'></td>
+
+
+
+ <tr height='156' style='mso-height-source:userset;height:117pt' id='r65'>
+<td height='154' class='x27' style='height:115.5pt;'>64</td>
+<td height='154' class='x54' width='142' style='height:115.5pt;width:106.5pt;' align='left' valign='top'><span style='mso-ignore:vglayout;position:absolute;z-index:58;margin-left:15px;margin-top:7px;width:113px;height:144px'><img width='113' height=144' src="/static/office/office_files/image001.png" name='图片 64'></span><span  style='mso-ignore:vglayout2'><table cellpadding='0' cellspacing='0'><tr><td height='154' class='x53' width='142' style='height:115.5pt;width:106.5pt;'></td></tr></table></span></td>
+<td class='x27'>AHMV4901</td>
+<td class='x27'>荧光笔</td>
+<td class='x27'>按盒出，6支/盒</td>
+<td class='x46'>盒</td>
+<td class='x49'><input size='6' id='r65_input' type="text"/></td>
 <td class='x25'></td>
 <td class='x25'></td>
 <td class='x25'></td>
  </tr>
- <tr height='37' style='mso-height-source:userset;height:27.75pt' id='r67'>
-<td class='x49'></td>
-<td class='x25'></td>
-<td class='x25'></td>
-<td class='x25'></td>
- </tr>
- <tr height='37' style='mso-height-source:userset;height:27.75pt' id='r68'>
-<td class='x49'></td>
-<td class='x25'></td>
-<td class='x25'></td>
-<td class='x25'></td>
- </tr>
- <tr height='37' style='mso-height-source:userset;height:27.75pt' id='r69'>
-<td class='x49'></td>
-<td class='x25'></td>
-<td class='x25'></td>
-<td class='x25'></td>
- </tr>
+
+
+
+
 <![if supportMisalignedColumns]>
  <tr height='0' style='display:none'>
   <td width='72' style='width:54pt'></td>
@@ -1994,16 +2002,30 @@ td
  <![endif]>
 
 
- <!-- liro-->
- <td><input type="submit"/> </td>
- <li><a href="#2" id='href_submit'>update</a></li>
- <!-- -->
 
- 
 </table>
+</div>
+ 
+<div class="col-xs-3" id="myScrollspy">
+    <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="0">
+ 	<li class="active"><a href="#2" id='href_submit'>点击提交</a></li>
+ 	<li class="active"><a href="../datacollection/office" id='href_submi'>回上一页</a></li>
+        <li><a href="#section-3">xx</a></li>
+        <li><a href="#section-4">xx</a></li>
+        <li class="active"><a href="#">回顶端</a></li>
+    </ul>
+</div>
+ 
 
-<!-- liroding -->
+
+<div class="cnzz" style="display: none;">
+            </div>
+            <div class="docpe" style="position: absolute;color: white;margin-left:-450;">
+            </div>
+
+<!--******************************  liroding *************************************-->
 <script src="/static/bootstrap/js/jquery.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <!-- -->
 
 <script language = 'javascript' type='text/javascript'>
@@ -2014,7 +2036,6 @@ var jsondata ={
 		Username:"guest",
 		Time:"2020.10.1",
 		Listdata:[]
-
 };
 
 
@@ -2029,8 +2050,6 @@ function getjsondata(){
 	}
 	//
 	jsondata.Username = username;
-
-
 	//alert(jsondata.Username);
 	//get system time
 	var myDate= new Date();
@@ -2040,13 +2059,13 @@ function getjsondata(){
 	var now = year + '-' + mouth + '-' + date;
 	jsondata.Time = now;
 	/////////////////////////////////////
-
 	var tb = document.getElementById('cfgtable');
 	var rows = tb.rows;
 	var columnlen = (rows[2].cells.length - 4);
 	//alert(columnlen);
-	for(var i = 2; i<60 ; i++ ){
-	  
+	//alert(rows.length);
+	for(var i = 2; i<66 ; i++ ){
+	 //alert(i); 
            if((rows[i].cells[columnlen].getElementsByTagName("input")[0].value)!= ""){
 				var tmpdata = new Object();
 	      //	for(var x=0;x<columnlen;x++){
@@ -2054,6 +2073,7 @@ function getjsondata(){
 	       //		alert(rows[i].cells[6].getElementsByTagName("input")[0].value);
 				tmpdata.rowid = i-1;
 				tmpdata.c2 = rows[i].cells[2].innerHTML;
+	 			//alert(tmpdata.c2); 
 				tmpdata.c3 = rows[i].cells[3].innerHTML;
 				tmpdata.c4 = rows[i].cells[4].innerHTML;
 				tmpdata.c5 = rows[i].cells[5].innerHTML;
@@ -2061,7 +2081,7 @@ function getjsondata(){
 	    //	}
 				jsondata.Listdata.push(tmpdata);
 	   }
-	   //if(i==7)
+	 //  if(i==7)
 	//	break
    	}
 
@@ -2075,7 +2095,7 @@ var serverport = "8080"
 $("#href_submit").click(function(){
          getjsondata();
          var jsonstring = JSON.stringify(jsondata);
-	 alert(jsonstring);
+	 //alert(jsonstring);
 	 var suburl = '/datacollection/office_query';
 	 var gurl = "http://" + serverip + ":" + serverport + suburl;
 	 $.post(gurl,
@@ -2085,8 +2105,8 @@ $("#href_submit").click(function(){
 	 },
 	 function(data,status){
 		console.log("server rt data:\n" + data + "\nstatus:" + status);
-	 	alert('update db done');
-		window.location.href = "/datacollection/office"
+	 	alert('update db done,return infomationservice page');
+		window.location.href= "/datacollection/office"
 	 })	
 });
 
@@ -2108,221 +2128,8 @@ $("#href_submit").click(function(){
  }
  ChangeRowspanHiddenData();
 </script>
-<div class="cnzz" style="display: none;">
-            </div>
-            <div class="docpe" style="position: absolute;color: white;margin-left:-450;">
-            <a target="_blank" href="http://www.docpe.com">档铺网——在线文档免费处理</a>
-            </div>
-            </body>
 
-<style>
-<!--
-.x53
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:center;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:700;
- font-style:normal;
- font-family:"等线","sans-serif";
- mso-protection:locked visible;
- }
-.x54
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:700;
- font-style:normal;
- font-family:"等线","sans-serif";
- border-top:1px solid windowtext;
- border-right:1px solid windowtext;
- border-bottom:1px solid windowtext;
- border-left:1px solid windowtext;
- mso-diagonal-down:none;
- mso-diagonal-up:none;
- mso-protection:locked visible;
- }
-.x55
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:center;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:700;
- font-style:normal;
- font-family:"等线","sans-serif";
- mso-protection:locked visible;
- }
-.x56
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:700;
- font-style:normal;
- font-family:"等线","sans-serif";
- border-top:1px solid windowtext;
- border-right:1px solid windowtext;
- border-bottom:1px solid windowtext;
- border-left:1px solid windowtext;
- mso-diagonal-down:none;
- mso-diagonal-up:none;
- mso-protection:locked visible;
- }
-.x57
- {
- mso-style-parent:style22;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:12pt;
- font-weight:700;
- font-style:normal;
- font-family:"宋体","monospace";
- mso-protection:locked visible;
- }
-.x58
- {
- mso-style-parent:style22;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:12pt;
- font-weight:700;
- font-style:normal;
- font-family:"宋体","monospace";
- border-top:1px solid windowtext;
- border-right:1px solid windowtext;
- border-bottom:1px solid windowtext;
- border-left:1px solid windowtext;
- mso-diagonal-down:none;
- mso-diagonal-up:none;
- mso-protection:locked visible;
- }
-.x59
- {
- mso-style-parent:style21;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:12pt;
- font-weight:700;
- font-style:normal;
- font-family:"宋体","monospace";
- mso-protection:locked visible;
- }
-.x60
- {
- mso-style-parent:style21;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:12pt;
- font-weight:700;
- font-style:normal;
- font-family:"宋体","monospace";
- border-top:1px solid windowtext;
- border-right:1px solid windowtext;
- border-bottom:1px solid windowtext;
- border-left:1px solid windowtext;
- mso-diagonal-down:none;
- mso-diagonal-up:none;
- mso-protection:locked visible;
- }
-.x61
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:700;
- font-style:normal;
- font-family:"等线","sans-serif";
- mso-protection:locked visible;
- }
-.x62
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:center;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:400;
- font-style:normal;
- font-family:"等线","sans-serif";
- mso-protection:locked visible;
- }
-.x63
- {
- mso-style-parent:style0;
- mso-number-format:General;
- text-align:general;
- vertical-align:middle;
- white-space:nowrap;
- background:white;
- mso-pattern:auto;
- color:#0D0D0D;
- font-size:11pt;
- font-weight:400;
- font-style:normal;
- font-family:"等线","sans-serif";
- border-top:1px solid windowtext;
- border-right:1px solid windowtext;
- border-bottom:1px solid windowtext;
- border-left:1px solid windowtext;
- mso-diagonal-down:none;
- mso-diagonal-up:none;
- mso-protection:locked visible;
- }
--->
-</style>
+</body>
+
+
 </html>
