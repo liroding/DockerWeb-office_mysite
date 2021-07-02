@@ -8,7 +8,7 @@ from LoginApp.models import LoginDB
 # 第三方 SMTP 服务
 mail_host="smtp.126.com"  #设置服务器
 mail_user="liroding@126.com"    #用户名
-mail_pass="KHZXGJNGBDJRIUFG"   #口令 
+mail_pass="RJPUJQLSEVZSLPJC"   #口令 
  
 
 
